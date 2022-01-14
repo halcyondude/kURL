@@ -3,10 +3,11 @@ module github.com/replicatedhq/kurl/testgrid/tgrun
 go 1.16
 
 require (
+	github.com/openshift/api v0.0.0 // indirect
 	github.com/pkg/errors v0.9.1
 	github.com/replicatedhq/kurl v0.0.0-00010101000000-000000000000
 	github.com/replicatedhq/kurl/testgrid/tgapi v0.0.0-00010101000000-000000000000
-	github.com/replicatedhq/troubleshoot v0.16.0 // indirect
+	github.com/replicatedhq/troubleshoot v0.16.0
 	github.com/spf13/cobra v1.2.1
 	github.com/spf13/viper v1.8.1
 	github.com/stretchr/testify v1.7.0
@@ -15,7 +16,7 @@ require (
 	k8s.io/api v0.22.2
 	k8s.io/apimachinery v0.22.2
 	k8s.io/client-go v12.0.0+incompatible
-	kubevirt.io/client-go v0.44.0
+	kubevirt.io/client-go v0.49.0
 )
 
 replace (
