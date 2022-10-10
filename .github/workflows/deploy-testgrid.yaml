@@ -9,7 +9,7 @@ jobs:
   staging-docker-image-tgapi:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.1.0
 
     - run: |
         docker build -f testgrid/tgapi/deploy/Dockerfile \
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-18.04
     needs: staging-docker-image-tgapi
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.1.0
 
     - name: kustomize
       run: |
@@ -71,7 +71,7 @@ jobs:
   production-docker-image-tgapi:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.1.0
 
     - run: |
         docker build -f testgrid/tgapi/deploy/Dockerfile \
@@ -91,7 +91,7 @@ jobs:
   docker-image-tgrun:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
       - name: tgrun-build
         run: |
           docker build -f testgrid/tgrun/Dockerfile \
@@ -112,7 +112,7 @@ jobs:
     runs-on: ubuntu-18.04
     needs: production-docker-image-tgapi
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.1.0
 
     - name: kustomize
       run: |
