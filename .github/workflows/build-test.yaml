@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: sigstore/cosign-installer@main
         with:
@@ -39,7 +39,7 @@ jobs:
           echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
         shell: bash
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - run: make -C kurl_util deps test build
 
@@ -47,7 +47,7 @@ jobs:
   build-web:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v2
         with:
@@ -58,7 +58,7 @@ jobs:
   test-shell:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - run: sudo apt-get install -y shunit2
     - run: make test-shell shunit2
 
@@ -75,7 +75,7 @@ jobs:
           echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
         shell: bash
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - run: |
           make -C kurlkinds deps test manager
@@ -94,7 +94,7 @@ jobs:
           echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
         shell: bash
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - run: make deps test build/bin/kurl
 
@@ -111,7 +111,7 @@ jobs:
         echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
       shell: bash
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - run: make -C testgrid/tgrun test build
     - run: make -C testgrid/tgapi test build
